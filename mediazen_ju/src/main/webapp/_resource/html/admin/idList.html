@@ -1,0 +1,196 @@
+<!--#include file="../include/_dtd.html" -->
+	<title>Admin - Id List</title>
+</head>
+<body>
+<!--#include file="../include/_dtd_nav.html" -->
+	<div class="container content-box left-bg">
+		<div class="row">
+			<div class="col-md-3 lnb-box">
+				<div class="lnb-title">
+					<h2>ID 관리</h2>
+				</div>
+				<div id="accordion" role="tablist">
+					<div class="card">
+						<div class="card-header" role="tab" id="headingOne">
+							<h5>
+								<a class="collapsed" href="../admin/idList.html">
+									ID 목록
+								</a>
+							</h5>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" role="tab" id="headingTwo">
+							<h5>
+								<a class="collapsed" href="../admin/idProduce.html">
+									ID 생성
+								</a>
+							</h5>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" role="tab" id="headingThree">
+							<h5>
+								<a class="collapsed" href="../admin/team.html">
+									팀 관리
+								</a>
+							</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div class="body-content">
+					<h1 class="h1">ID 목록</h1>
+
+					<div class="row total-num">
+						<div class="col-md-6 text-left">전체: 00</div>
+						<div class="col-md-6 text-right">
+							<a href="../admin/idProduce.html" class="btn btn-info" role="button" aria-pressed="true">ID 생성</a>
+						</div>
+					</div>
+					<table class="table table-striped th-center">
+						<colgroup>
+							<col style="width:5%" />
+							<col style="width:7%" />
+							<col style="width:15;" />
+							<col style="width:20%" />
+							<col style="width:15%" />
+							<col style="width:auto" />
+							<col style="width:10%" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th><input type="checkbox" name="" id="" /></th>
+								<th>번호</th>
+								<th>ID</th>
+								<th>팀명</th>
+								<th>이름</th>
+								<th>이메일</th>
+								<th>생성일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th><input type="checkbox" name="" id="" /></th>
+								<td>14</td>
+								<td>Song junggi</td>
+								<td>UX디자인팀</td>
+								<td>
+									<a href="#none" class="" data-toggle="modal" data-target="#userView">Song junggi</a>
+								</td>
+								<td>Songjunggi@gmail.com</td>
+								<td>2015.05.11</td>
+							</tr>
+							<tr>
+								<th><input type="checkbox" name="" id="" /></th>
+								<td>14</td>
+								<td>Song junggi</td>
+								<td>UX디자인팀</td>
+								<td>
+									<a href="#none" class="" data-toggle="modal" data-target="#userView">Song junggi</a>
+								</td>
+								<td>Songjunggi@gmail.com</td>
+								<td>2015.05.11</td>
+							</tr>
+							<tr>
+								<th><input type="checkbox" name="" id="" /></th>
+								<td>14</td>
+								<td>Song junggi</td>
+								<td>UX디자인팀</td>
+								<td>
+									<a href="#none" class="" data-toggle="modal" data-target="#userView">Song junggi</a>
+								</td>
+								<td>Songjunggi@gmail.com</td>
+								<td>2015.05.11</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<div class="text-center">
+						<nav aria-label="Page navigation">
+							<ul class="pagination">
+								<li>
+									<a href="#" aria-label="Previous">
+										<span aria-hidden="true">&laquo;</span>
+									</a>
+								</li>
+								<li><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li>
+									<a href="#" aria-label="Next">
+										<span aria-hidden="true">&raquo;</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+
+					<div class="text-right">
+						<a href="#" class="btn btn-default" role="button" aria-pressed="true">수정</a>
+						<a href="#" class="btn btn-default" role="button" aria-pressed="true">삭제</a>
+					</div>
+
+					<!-- modal -->
+					<div class="modal fade" id="userView" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+						<div class="modal-dialog modal-md">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+									<h4 class="h4 modal-title">ID 상세</h4>
+								</div>
+								<div class="modal-body">
+									<div class="table-responsive">
+										<table class="table table-bordered th-color">
+											<colgroup>
+												<col style="width:15%" />
+												<col style="width:35%" />
+												<col style="width:15%" />
+												<col style="width:35%" />
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row">ID</th>
+													<td>Song~</td>
+													<th scope="row">이름</th>
+													<td>Song~</td>
+												</tr>
+												<tr>
+													<th scope="row">소속팀</th>
+													<td colspan="3">UX디자인팀</td>
+												</tr>
+												<tr>
+													<th scope="row">이메일</th>
+													<td colspan="3">Song@gmail.com</td>
+												</tr>
+												<tr>
+													<th scope="row">사진</th>
+													<td colspan="3">
+														<div class="my-image">
+															<img src="http://dummyimage.com/50x50" class="img-thumbnail" alt="" />
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //modal -->
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--#include file="../include/_footer.html" -->
+<!--#include file="../include/_scripts.html" -->
+</body>
+</html>

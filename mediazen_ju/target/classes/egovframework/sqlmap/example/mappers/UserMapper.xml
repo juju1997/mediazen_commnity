@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMapper">
+
+	<!-- <resultMap id="sample" type="egovframework.example.sample.service.SampleVO">
+		<result property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="description" column="description"/>
+		<result property="useYn" column="use_yn"/>
+		<result property="regUser" column="reg_user"/>
+	</resultMap>
+	
+	!-->
+	<resultMap id="userSelectMap" type="kr.co.mediazen_ju.service.domain.User">
+		<result property="userId" column="USER_ID"/>
+		<result property="userTeamNo" column="USER_TEAM_NO"/>
+		<result property="findCode" column="FINDCODE"/>
+		<result property="phone" column="PHONE"/>
+		<result property="password" column="PASSWORD"/>
+		<result property="name" column="NAME"/>
+		<result property="gender" column="GENDER"/>
+		<result property="birth" column="BIRTH"/>
+		<result property="role" column="ROLE"/>
+		<result property="deleteStatuts" column="DELETE_STATUS"/>
+		<result property="profileFileName" column="PROFILE_FILENAME"/>
+		<result property="selfIntroduction" column="SELF_INTRODUCTION"/>
+		<result property="joinDate" column="JOIN_DATE"/>
+	</resultMap>
+	
+	<select id="getUser" parameterType="String" resultMap="userSelectMap">
+		SELECT *
+		FROM user
+		WHERE USER_ID = #{value}
+	</select>
+	
+	<select id="findID" parameterType="user" resultType="string">
+		SELECT USER_ID
+		FROM user
+		WHERE NAME=#{name} AND FINDCODE=#{findCode}
+	</select>
+	
+	<select id="findPassword" parameterType="user" resultMap="userSelectMap">
+		SELECT *
+		FROM user
+		WHERE USER_ID=#{userId} AND FINDCODE=#{findCode}
+	</select>
+	
+	<update id="changePassword" parameterType="user">
+		UPDATE user
+		SET PASSWORD=#{password}
+		WHERE USER_ID=#{userId}
+	</update>
+	
+	<select id="getUserListForTeam" resultMap="userSelectMap">
+		SELECT USER_ID, NAME, USER_TEAM_NO
+		FROM user
+	</select>
+	
+	<select id="getUserListForGetTeam" parameterType="int" resultMap="userSelectMap">
+		SELECT * 
+		FROM user
+		WHERE USER_TEAM_NO = #{value}
+	</select>
+	
+	<insert id="createUser" parameterType="user">
+		INSERT INTO
+			USER(USER_ID, USER_TEAM_NO, FINDCODE, PHONE, PASSWORD, NAME, GENDER, BIRTH,
+				 ROLE, DELETE_STATUS, JOIN_DATE)
+		VALUES(#{userId}, #{userTeamNo}, #{findCode}, #{phone}, #{password}, 
+				#{name}, #{gender}, #{birth}, #{role}, 1, curdate()) 
+	</insert>
+	
+	<select id="userList" parameterType="search" resultMap="userSelectMap">
+			SELECT list.*
+			FROM ( SELECT inner_table.*, @rownum:=@rownum+1 AS row_seq
+					FROM ( SELECT *
+							FROM user
+							<if test="searchCondition != null">
+								<if test='searchCondition == 1 and searchKeyword !="" '>
+									WHERE user_id LIKE CONCAT('%',#{searchKeyword},'%')
+								</if>
+								<if test='searchCondition == 2 and searchKeyword !="" '>
+									WHERE name LIKE CONCAT('%',#{searchKeyword},'%')
+								</if>
+							</if>
+							ORDER BY user_id ) inner_table
+					WHERE (SELECT @rownum:=0) <![CDATA[<=]]> #{endRowNum} ) list
+			WHERE row_seq BETWEEN #{startRowNum} AND #{endRowNum}
+	</select>
+	
+	<select id="getTotalCount" parameterType="search" resultType="int">
+		SELECT COUNT(*) 
+		FROM user
+		<if test="searchCondition != null">
+		<if test='searchCondition == 1 and searchKeyword !="" '>
+				WHERE user_id LIKE CONCAT('%',#{searchKeyword},'%')
+		</if>
+			<if test='searchCondition == 2 and searchKeyword !="" '>
+				WHERE name LIKE CONCAT('%',#{searchKeyword},'%')
+			</if>
+		</if>
+	</select>
+	<!-- 
+
+	<insert id="insertSample" parameterType="SampleVO">
+
+			INSERT INTO SAMPLE
+				( ID
+				  , NAME
+				  , DESCRIPTION
+				  , USE_YN
+				  , REG_USER )
+			VALUES ( #{id}
+				  , #{name}
+				  , #{description}
+				  , #{useYn}
+				  , #{regUser} )
+
+	</insert>
+
+	<update id="updateSample">
+
+			UPDATE SAMPLE
+			SET ID=#{id}
+				, NAME=#{name}
+				, DESCRIPTION=#{description}
+				, USE_YN=#{useYn}
+				  WHERE ID=#{id}
+
+	</update>
+
+	<delete id="deleteSample">
+
+			DELETE FROM SAMPLE
+			WHERE ID=#{id}
+
+	</delete>
+
+	<select id="selectSample" resultMap="sample">
+
+			SELECT
+				ID, NAME, DESCRIPTION, USE_YN, REG_USER
+			FROM SAMPLE
+			WHERE ID=#{id}
+
+	</select>
+
+	<select id="selectSampleList" parameterType="searchVO" resultType="egovMap">
+
+			SELECT
+				ID, NAME, DESCRIPTION, USE_YN, REG_USER
+			FROM SAMPLE
+			WHERE 1=1
+			<if test="searchKeyword != null and searchKeyword != ''">
+		        <choose>
+		            <when test="searchCondition == 0">
+						AND	ID LIKE '%' || #{searchKeyword} || '%'
+					</when>
+		            <when test="searchCondition == 1">
+						AND	NAME LIKE '%' || #{searchKeyword} || '%'
+					</when>
+				</choose>
+			</if>
+			ORDER BY ID ASC
+			LIMIT #{recordCountPerPage} OFFSET #{firstIndex}
+	</select>
+
+	<select id="selectSampleListTotCnt" parameterType="searchVO" resultType="int">
+
+			SELECT COUNT(*) totcnt
+			FROM SAMPLE
+			WHERE 1=1
+			<if test="searchKeyword != null and searchKeyword != ''">
+		        <choose>
+		            <when test="searchCondition == 0">
+						AND ID LIKE '%' || #{searchKeyword} || '%'
+					</when>
+		            <when test="searchCondition == 1">
+						AND	NAME LIKE '%' || #{searchKeyword} || '%'
+					</when>
+				</choose>
+			</if>
+	</select> -->
+
+</mapper>

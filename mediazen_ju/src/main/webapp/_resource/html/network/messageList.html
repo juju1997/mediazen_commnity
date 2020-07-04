@@ -1,0 +1,213 @@
+<!--#include file="../include/_dtd.html" -->
+	<title>message List</title>
+</head>
+<body>
+<!--#include file="../include/_nav.html" -->
+	<div class="container content-box left-bg">
+		<div class="row">
+			<div class="col-md-3 lnb-box">
+				<div class="lnb-title">
+					<h2>Message</h2>
+				</div>
+				<div id="accordion" role="tablist">
+					<div class="card">
+						<div class="card-header" role="tab" id="headingOne">
+							<h5>
+								<a data-toggle="collapse" href="#none">
+									받은 메시지 [15]
+								</a>
+							</h5>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" role="tab" id="headingTwo">
+							<h5>
+								<a class="collapsed" data-toggle="collapse" href="#none">
+									보낸 메시지 [42]
+								</a>
+							</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div class="body-content">
+					<h1 class="h1">메시지</h1>
+					<div class="total-num">전체: 00</div>
+					<table class="table table-striped th-center">
+						<colgroup>
+							<col style="width:10%" />
+							<col style="width:auto;" />
+							<col style="width:20%" />
+							<col style="width:20%" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th>번호</th>
+								<th>메시지</th>
+								<th>작성자</th>
+								<th>수신일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">14</th>
+								<td class="text-left">서비스 구매 시 신용카드로 결제를 진행하고 싶습니다.  신용카드
+									<a href="#none"><i class="fa fa-times" aria-hidden="true"></i></a>
+								</td>
+								<td>Song junggi</td>
+								<td>2015.05.11</td>
+							</tr>
+							<tr>
+								<th scope="row">13</th>
+								<td class="text-left">서비스 구매 시 신용카드로 결제를 진행하고 싶습니다.  신용카드
+									<a href="#none"><i class="fa fa-times" aria-hidden="true"></i></a>
+								</td>
+								<td>Song junggi</td>
+								<td>2015.05.11</td>
+							</tr>
+							<tr>
+								<th scope="row">12</th>
+								<td class="text-left">서비스 구매 시 신용카드로 결제를 진행하고 싶습니다.  신용카드
+									<a href="#none"><i class="fa fa-times" aria-hidden="true"></i></a>
+								</td>
+								<td>Song junggi</td>
+								<td>2015.05.11</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<div class="text-center">
+						<nav aria-label="Page navigation">
+							<ul class="pagination">
+								<li>
+									<a href="#" aria-label="Previous">
+										<span aria-hidden="true">&laquo;</span>
+									</a>
+								</li>
+								<li><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li>
+									<a href="#" aria-label="Next">
+										<span aria-hidden="true">&raquo;</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12 user-select-box">
+							<div class="col-md-10 pr-0">
+								<div class="userList">
+									<span>사업팀1</span>
+									<span>user1</span>
+									<span>user3</span>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<a class="btn btn-default _modal" data-toggle="modal" data-target="#previewModal">수신자 선택</a>
+							</div>
+
+							<!-- popup -->
+							<div class="modal fade" id="previewModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+								<div class="modal-dialog modal-sm">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h4 class="h4 modal-title">수신자 선택</h4>
+										</div>
+										<div class="modal-body">
+											<div id="accordion" role="tablist" class="tablist">
+												<div class="card">
+													<div class="card-header" role="tab" id="heading1">
+														<h5 class="h5">
+															<input type="checkbox" name="" id="" />
+															<a data-toggle="collapse" href="#collapse1" aria-expanded="true" aria-controls="collapseOne">
+																사업실1
+															</a>
+															<i class="fa fa-angle-down" aria-hidden="true"></i>
+														</h5>
+													</div>
+													<div id="collapse1" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+														<div class="card-body">
+															<ul class="sub-list">
+																<li><input type="checkbox" name="" id="user1-1" /><label for="user1-1">user1</label></li>
+																<li><input type="checkbox" name="" id="user1-2" /><label for="user1-2">user2</label></li>
+																<li><input type="checkbox" name="" id="user1-3" /><label for="user1-3">user3</label></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+
+												<div class="card">
+													<div class="card-header" role="tab" id="heading2">
+														<h5 class="h5">
+															<input type="checkbox" name="" id="" />
+															<a data-toggle="collapse" href="#collapse2" aria-expanded="true" aria-controls="collapseOne">
+																사업실2
+															</a>
+															<i class="fa fa-angle-down" aria-hidden="true"></i>
+														</h5>
+													</div>
+													<div id="collapse2" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+														<div class="card-body">
+															<ul class="sub-list">
+																<li><input type="checkbox" name="" id="user2-1" /><label for="user2-1">user1</label></li>
+																<li><input type="checkbox" name="" id="user2-2" /><label for="user2-2">user2</label></li>
+																<li><input type="checkbox" name="" id="user2-3" /><label for="user2-3">user3</label></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+
+												<div class="card">
+													<div class="card-header" role="tab" id="">
+														<h5 class="h5">
+															<input type="checkbox" name="" id="all" /><label for="all">전체선택</label>
+														</h5>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+											<button type="button" class="btn btn-primary" data-dismiss="modal">선택</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //popup -->
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="widget-area no-padding blank">
+								<div class="status-upload">
+									<form>
+										<textarea placeholder="What are you doing right now?" ></textarea>
+										<ul>
+											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i class="fa fa-music"></i></a></li>
+											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>
+											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>
+											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
+										</ul>
+										<button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> 메시지 전송</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--#include file="../include/_footer.html" -->
+<!--#include file="../include/_scripts.html" -->
+</body>
+</html>

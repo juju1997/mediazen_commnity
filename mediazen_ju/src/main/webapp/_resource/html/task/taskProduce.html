@@ -1,0 +1,117 @@
+<!--#include file="../include/_dtd.html" -->
+	<title>task 생성</title>
+</head>
+<body>
+<!--#include file="../include/_dtd_nav.html" -->
+	<div class="container content-box">
+		<div class="body-content">
+			<h1 class="h1">Task 생성</h1>
+
+			<div class="table-responsive">
+				<table class="table table-bordered th-color">
+					<colgroup>
+						<col style="width:20%" />
+						<col style="width:auto" />
+						<col style="width:16%" />
+						<col style="width:16%" />
+						<col style="width:16%" />
+						<col style="width:16%" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">Title</th>
+							<td colspan="5">
+								<input type="text" class="form-control" id="" placeholder="제목을 입력하세요">
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">Duration</th>
+							<td colspan="5">
+								<div id="sandbox-container">
+									<div class="input-daterange input-group" id="datepicker">
+										<input type="text" class="input-sm form-control" name="start" />
+										<span class="input-group-addon">to</span>
+										<input type="text" class="input-sm form-control" name="end" />
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">Description</th>
+							<td colspan="5">
+								<textarea class="form-control" rows="3" placeholder="내용을 입력하세요"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">Target</th>
+							<td colspan="5">
+								<div class="form-inline">
+									<div class="form-group">
+										<label for="inputPassword2" class="sr-only">Password</label>
+										<input type="text" class="form-control" id="" placeholder="Search">
+									</div>
+									<button type="submit" class="btn btn-default">폴더생성</button>
+								</div>
+							</td>
+						</tr>
+						<tr class="total-table">
+							<th rowspan="6" class="text-left">Annotator &amp; task</th>
+							<!-- 수행자가 늘어나면 상단 rowspan도 count 되어야 합니다. 수행자수 + 2(total) -->
+							<th rowspan="2">Total</th>
+							<td rowspan="2">12,000</td>
+							<th>Done</th>
+							<th>Not yet</th>
+							<th>Progress</th>
+						</tr>
+						<tr class="total-table">
+							<td>0</td>
+							<td class="not-yet">12,000</td>
+							<td class="pro-color">0%</td>
+						</tr>
+						<!-- 반복영역 -->
+						<tr class="total-table">
+							<td>Jess Kim</td>
+							<td></td>
+							<td>15</td>
+							<td class="not-yet">222</td>
+							<td class="pro-color">11%</td>
+						</tr>
+						<!-- //반복영역 -->
+						<tr class="total-table">
+							<td>Jess Kim</td>
+							<td></td>
+							<td>15</td>
+							<td class="not-yet">222</td>
+							<td class="pro-color">11%</td>
+						</tr>
+						<tr class="total-table">
+							<td>Jess Kim</td>
+							<td></td>
+							<td>15</td>
+							<td class="not-yet">222</td>
+							<td class="pro-color">11%</td>
+						</tr>
+						<tr class="total-table">
+							<td>Jess Kim</td>
+							<td></td>
+							<td>15</td>
+							<td class="not-yet">222</td>
+							<td class="pro-color">11%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!--#include file="../include/_footer.html" -->
+<!--#include file="../include/_scripts.html" -->
+</div>
+
+<script type="text/javascript">
+	/* datepicker */
+	$('#sandbox-container .input-daterange').datepicker({
+			autoclose: true
+	});
+</script>
+</body>
+</html>

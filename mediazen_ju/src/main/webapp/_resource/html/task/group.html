@@ -1,0 +1,142 @@
+<!--#include file="../include/_dtd.html" -->
+	<title>group</title>
+</head>
+<body>
+<!--#include file="../include/_dtd_nav.html" -->
+	<div class="container content-box left-bg">
+		<div class="row">
+			<div class="col-md-3 lnb-box">
+				<div class="lnb-title">
+					<h2>Q&amp;A</h2>
+				</div>
+				<div id="accordion" role="tablist">
+					<div class="card">
+						<div class="card-header" role="tab" id="headingOne">
+							<h5>
+								<a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									그룹 1
+								</a>
+								<a href="#none" class="delete-group"><i class="fa fa-times" aria-hidden="true"></i></a>
+							</h5>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" role="tab" id="headingTwo">
+							<h5>
+								<a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									그룹 2
+								</a>
+								<a href="#none" class="delete-group"><i class="fa fa-times" aria-hidden="true"></i></a>
+							</h5>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" role="tab" id="headingThree">
+							<h5>
+								<a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+									그룹 3
+								</a>
+								<a href="#none" class="delete-group"><i class="fa fa-times" aria-hidden="true"></i></a>
+							</h5>
+						</div>
+					</div>
+					<div class="text-center group-btn">
+						<button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#groupName">그룹생성</button>
+					</div>
+
+					<!-- modal -->
+					<div class="modal fade" id="groupName" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+						<div class="modal-dialog modal-sm">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+									<h4 class="h4 modal-title">그룹생성</h4>
+								</div>
+								<div class="modal-body">
+									<div class="form-group">
+										<label for="">그룹명</label>
+										<input type="text" class="form-control" id="" placeholder="그룹명을 입력하세요">
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">생성</button>
+									<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //modal -->
+
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div class="body-content">
+					<h1 class="h1">List</h1>
+					<div class="total-num">전체: 00</div>
+					<table class="table table-striped th-center">
+						<colgroup>
+							<col style="width:10%" />
+							<col style="width:auto;" />
+							<col style="width:20%" />
+							<col style="width:20%" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th>번호</th>
+								<th>제목</th>
+								<th>작성자</th>
+								<th>작성일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">14</th>
+								<td class="text-left"><a href="#none">서비스 구매 시 신용카드로 결제를 진행하고 싶습니다.  신용카드 [15]</a></td>
+								<td>Song junggi</td>
+								<td>2015.05.11</td>
+							</tr>
+							<tr>
+								<th scope="row">13</th>
+								<td class="text-left"><a href="#none">Oracle Marketing Cloud 오라클 마케팅 클라우드를 구매하려고 알아 보던 중에 궁금한 점이 있어 문의 드립니다.B2B마케터를 위한 새롭게 추가된 기능이 무엇인가요? [15]</a></td>
+								<td>Song junggi</td>
+								<td>2015.05.11</td>
+							</tr>
+							<tr>
+								<th scope="row">12</th>
+								<td class="text-left"><a href="#none">[답변] 저희 오라클 제품에 관심을 가져주셔서 감사합니다. 신제품은 데이터베이스 확장 및 이메일 발송 예측을 위한 고객 프로파일 및 비즈니스[15]</a></td>
+								<td>Song junggi</td>
+								<td>2015.05.11</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<div class="text-center">
+						<nav aria-label="Page navigation">
+							<ul class="pagination">
+								<li>
+									<a href="#" aria-label="Previous">
+										<span aria-hidden="true">&laquo;</span>
+									</a>
+								</li>
+								<li><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li>
+									<a href="#" aria-label="Next">
+										<span aria-hidden="true">&raquo;</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--#include file="../include/_footer.html" -->
+<!--#include file="../include/_scripts.html" -->
+</body>
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="TeamMapper">
+
+	
+	<resultMap id="teamSelectMap" type="kr.co.mediazen_ju.service.domain.Team">
+		<result property="teamNo" column="TEAM_NO"/>
+		<result property="master" column="MASTER"/>
+		<result property="teamName" column="TEAM_NAME"/>
+		<result property="teamIntroduction" column="TEAM_INTRODUCTION"/>
+		<result property="teamProfileName" column="TEAM_PROFILENAME"/>
+		<result property="masterName" column="MASTER_NAME"/>
+	</resultMap>
+	
+	<insert id="teamGeneration" parameterType="team">
+		INSERT INTO
+			TEAM(TEAM_NAME, TEAM_INTRODUCTION)
+		VALUES(#{teamName},#{teamIntroduction})
+	</insert>
+	
+	<select id="teamList" resultMap="teamSelectMap">
+		SELECT TEAM_NO, TEAM_NAME, MASTER
+		FROM TEAM
+	</select>
+	
+	<select id="getTeam" parameterType="int" resultMap="teamSelectMap">
+		SELECT t.*,u.NAME AS MASTER_NAME
+		FROM TEAM t, USER u
+		WHERE t.TEAM_NO = #{value}
+			AND t.MASTER = u.USER_ID
+	</select>
+	
+	<select id="getTeamForNull" parameterType="int" resultMap="teamSelectMap">
+		SELECT *
+		FROM TEAM
+		WHERE TEAM_NO = #{value}
+	</select>
+	
+	<delete id="deleteTeam" parameterType="int">
+		DELETE
+		FROM TEAM
+		WHERE TEAM_NO = #{value}
+	</delete>
+
+</mapper>

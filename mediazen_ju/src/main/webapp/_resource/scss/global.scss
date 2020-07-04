@@ -1,0 +1,179 @@
+@charset "utf-8";
+
+
+$baseBgColor : #2b3b4e;
+$baseColor : #e15525;
+$formBaseHeight : 22px;
+
+*{
+	box-sizing:border-box;
+	line-height:1.4;
+}
+
+html,
+body{
+	font-family: 'Noto Sans KR', sans-serif;
+	height:100%;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-weight:bold !important;
+}
+/* sprite img */
+.icon{
+	display:inline-block;
+}
+
+/* IR */
+legend,
+.hidden {
+	position:absolute;
+	clip: rect(0, 0, 0, 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+}
+caption{
+	position:relative;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+}
+
+/* sursor */
+button{
+	cursor:pointer;
+}
+
+a{
+	text-decoration:none;
+}
+
+/* float */
+.float_left{
+	float:left;
+}
+.float_right{
+	float:right;
+}
+.clearfix:after{
+	content:'';
+	display:table;
+	width:100%;
+	clear:both;
+}
+
+/* text 생략 */
+.ellipsis{
+	width: 100%;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: left;
+}
+.ellipsis2{
+	@extend .ellipsis;
+	white-space: normal;
+	line-height:1.2;
+	height:2.4em;
+	word-wrap: break-word;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.ellipsis3{
+	@extend .ellipsis;
+	white-space: normal;
+	line-height:1.54;
+	height:4.62em;
+	word-wrap: break-word;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+.ellipsis4{
+	@extend .ellipsis;
+	white-space: normal;
+	line-height:1.54;
+	height:6.16em;
+	word-wrap: break-word;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+}
+
+/* form */
+select,
+input{
+	height:$formBaseHeight;
+}
+select{
+	padding:0;
+}
+
+/* align */
+.textLeft{
+	text-align:left !important;
+}
+.textCenter{
+	text-align:center !important;
+}
+.textRight{
+	text-align:right !important;
+}
+.textMiddle{
+	&::before{
+		content:'';
+		display:inline-block;
+		height:100%;
+		vertical-align:middle;
+	}
+	&>*{
+		vertical-align:middle;
+	}
+}
+
+/* 간격 margin & padding */
+$direction : ('t', 'r', 'b', 'l');
+$directionFull : ('top', 'right', 'bottom', 'left');
+$directionCount : length($direction);
+
+@for $i from 0 to $directionCount{
+	$thisDirection: unquote(nth($direction, $i+1));
+	$thisDirectionFull: unquote(nth($directionFull, $i+1));
+	@for $i from 1 to 15{
+		.m#{$thisDirection}#{$i*5}{
+			margin-#{$thisDirectionFull}: #{$i*5}px !important;
+		}
+	}
+}
+@for $i from 0 to $directionCount{
+	$thisDirection: unquote(nth($direction, $i+1));
+	$thisDirectionFull: unquote(nth($directionFull, $i+1));
+	@for $i from 1 to 15{
+		.p#{$thisDirection}#{$i*5}{
+			padding-#{$thisDirectionFull}: #{$i*5}px !important;
+		}
+	}
+}
+
+/* 너비 10px 부터 500px까지 */
+@for $i from 1 to 51{
+	.w#{$i*10}{
+		width:#{$i*10}px !important;
+	}
+}
+
+/* 너비 % */
+.w5p{width:5% !important;}
+.w10p{width:10% !important;}
+.w15p{width:15% !important;}
+.w20p{width:20% !important;}
+.w25p{width:25% !important;}
+.w33p{width:33.33% !important;}
+.w50p{width:50% !important;}
+.w100p{width:100% !important;}
