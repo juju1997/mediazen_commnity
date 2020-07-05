@@ -137,12 +137,12 @@
 						<tbody>
 							<c:forEach var="user" items="${list }" varStatus="varStatus">
 								<tr>
-									<td>${user.userId }</td>
+									<td>
+										<a href="#non" data-toggle="modal" data-target="#userView" style="font-weight: bold;" class="userId">${user.userId }</a>
+									</td>
 									<td>${user.name }</td>
 									<td>${user.userTeamNo }</td>
-									<td>
-										<a href="#none" class="" data-toggle="modal" data-target="#userView">${user.phone}</a>
-									</td>
+									<td>${user.phone}</td>
 									<td>${user.birth }</td>
 									<td>${user.joinDate }</td>
 								</tr>
@@ -175,6 +175,8 @@
 						</nav>
 					</div>
 					<input type="hidden" name="currentPage" id="currentPage" value=""/>
+					
+					
 					<!-- modal -->
 					<div class="modal fade" id="userView" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
 						<div class="modal-dialog modal-md">
@@ -201,11 +203,29 @@
 												</tr>
 												<tr>
 													<th scope="row">소속팀</th>
-													<td colspan="3">UX디자인팀</td>
+													<td>인사팀</td>
+													<th scope="row">Phone</th>
+													<td>010492932</td>
 												</tr>
 												<tr>
-													<th scope="row">이메일</th>
-													<td colspan="3">Song@gmail.com</td>
+													<th scope="row">성별</th>
+													<td>남</td>
+													<th scope="row">생일</th>
+													<td>1990-03-12</td>
+												</tr>
+												<tr>
+													<th scope="row">입사일</th>
+													<td>1929-03-12</td>
+													<th scope="row">권한</th>
+													<td>일반</td>
+												</tr>
+												<tr>
+													<th scope="row">자기소개</th>
+													<td colspan="3">안녕하십니까 접니다.</td>
+												</tr>
+												<tr>
+													<th scope="row">FindCode</th>
+													<td colspan="3">5235236242</td>
 												</tr>
 												<tr>
 													<th scope="row">사진</th>
@@ -278,11 +298,33 @@
 		self.location = "/user/createUserGet.do";
 	});
 	
+	//회원 상세 조회(Modal (관리자용))
+	$(".userId").on("click",function(){
+		var userIdToRest = $(this).text();
+		$.ajax({
+			url : "/user/rest/getUser.do",
+			method : "GET",
+			headers : {
+				"Accept" : "application/json",
+				"Content-Type" : "application/json;charset=utf-8"
+			},
+			data : {
+				userId : userIdToRest
+			},
+			dataType : "json",
+			success : function(data){
+				alert(data);
+			},
+			error : function(request,status,error){
+				alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			}
+		});
+	});
 	
+	//페이지네이션
 	function fncGetList(currentPage) {
 		$("#currentPage").val(currentPage);
 		$("form").attr("method","POST").attr("action","/user/userList.do").submit();
-		
 	}
 </script>
 </body>

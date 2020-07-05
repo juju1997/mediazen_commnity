@@ -36,4 +36,13 @@ public class UserRestController {
 		}
 		return result;
 	}
+	
+	//회원정보를 조회한다. (관리자)
+	@ResponseBody
+	@RequestMapping(value = "getUser.do", method = RequestMethod.GET)
+	public User getUser(@RequestParam("userId") String userId) throws Exception {
+		User user = userService.getUser(userId);
+		System.out.println(user);
+		return user;
+	}
 }

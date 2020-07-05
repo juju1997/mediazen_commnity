@@ -332,14 +332,6 @@
 		$(document).on("click","#createUserSubmit",function(){
 			if(userId==true&&password==true&&name==true&&userTeamNo==true
 					&&phone==true&&gender==true&&birth==true&&role==true){
-				console.log($("#userId").val());
-				console.log($("#password").val());
-				console.log($("#name").val());
-				console.log($("#userTeamNo").val());
-				console.log($("#phone").val());
-				console.log($("#gender").val());
-				console.log($("#birth").val());
-				console.log($("#role").val());
 				$("form").attr("method", "POST").attr("action","/user/createUserPost.do").submit();
 			}else{
 				alert("모든 입력칸을 초록색으로 만들어주세요")

@@ -151,7 +151,6 @@ public class UserController {
 			int code = Integer.parseInt(uuid.substring(0,8));
 			user.setFindCode(code);
 		}
-		System.out.println(user);
 		userService.createUser(user);
 		return "redirect:/user/goMain.do";
 	}
@@ -164,8 +163,6 @@ public class UserController {
 		if(search.getCurrentPage()==0){
 			search.setCurrentPage(1);
 		}
-		System.out.println(search.getSearchCondition());
-		System.out.println(search.getSearchKeyword());
 		search.setPageSize(pageSize);
 		Map<String, Object> map = userService.userList(search);
 		
